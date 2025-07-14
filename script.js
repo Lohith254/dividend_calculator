@@ -11,7 +11,7 @@ document.getElementById("dividendForm").addEventListener("submit", function (e) 
   const totalValueEUR = investmentGBP / exchangeRate;
   const numberOfShares = totalValueEUR / perSharePrice;
   const dividendEarnedEUR = numberOfShares * dividendPerShare;
-  const netDividendGBP = (dividendEarnedEUR - taxEUR) * exchangeRate;
+  const netDividendGBP = dividendEarnedEUR * exchangeRate - taxEUR;
 
   document.getElementById("results").innerHTML = `
     <p><strong>Converted Investment (EUR):</strong> €${totalValueEUR.toFixed(2)}</p>
